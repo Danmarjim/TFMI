@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <h:head>
+            <title>TFMI | Entrar</title>
+        </h:head>
+        <h:body>
+            <h:form>
+                <h1>
+                    <h:outputText value="Login"/>
+                </h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Usuario:" for="user"/>
+                    <h:inputText id="user" value="#{loginBean.usuario.username}" title="Usuario" required="true"
+                                 requiredMessage="El nombre de usuario es obligatorio."/>
+                    <h:outputLabel value="Contraseña:" for="password"/>
+                    <h:inputSecret id="password" value="#{loginBean.usuario.password}" title="Contraseña"
+                                   required="true" requiredMessage="La contraseña es obligatoria."/>
+                    <h:commandButton value="Entrar" action="#{loginBean.login}"/>
+                </h:panelGrid>
+            </h:form>
+             
+            <h:link value="Registrar usuario" outcome="register"/>
+        </h:body>
+    </html>
+</f:view>
